@@ -20,8 +20,11 @@ function authJwt() {
 }
 
 async function isRevoked(req, payload, done) {
-  //console.log(payload.isAdmin) // where is comming from payload(isAdmin) exactly?
+  console.log('isRevoked')
+  console.log(payload.isAdmin) // where is comming from payload(isAdmin) exactly?
+  
   if(!payload.isAdmin) {
+    console.log('!payload.isAdmin')
     done(null, true)
     //done()
   }
